@@ -7,4 +7,6 @@
 
 | #SL  | Test Case |
 | ---- | --------- |
-| 01   | Test login funtionality with invalid data|
+| 01   | Test login funtionality with invalid data and valid data|
+| 02   | Home page submeny functionality check|
+| 03   | Shipping form input fields dunctionality check|
