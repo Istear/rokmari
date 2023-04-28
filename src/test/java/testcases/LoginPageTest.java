@@ -25,16 +25,22 @@ public class LoginPageTest extends BaseDriver {
 		loginPage.wait(2000);
 	}
 	
-	@Test(description = "Login functionality test with invalid test data.", dataProvider = "LoginErrorDataOne", dataProviderClass = DataSet.class)
+	@Test(description = "Login functionality test with invalid test data.",priority = 1, dataProvider = "LoginErrorDataOne", dataProviderClass = DataSet.class)
 	public void loginTestErrorOne(String email, String pass, String errorMsg) {
 		loginTest(email, pass);
 		assertEquals(loginPage.getText(loginPage.loginErrorAlert), errorMsg + email);
 	}
 	
-	@Test(description = "Login functionality test with invalid test data.", dataProvider = "LoginErrorDataTwo", dataProviderClass = DataSet.class)
+	@Test(description = "Login functionality test with invalid test data.",priority = 2, dataProvider = "LoginErrorDataTwo", dataProviderClass = DataSet.class)
 	public void loginTestErrorTwo(String email, String pass, String errorMsg) {
 		loginTest(email, pass);
 		assertEquals(loginPage.getText(loginPage.loginErrorMsg),errorMsg);
 	}
 	
+	@Test(description = "Login functionality test with valid test data.",priority = 3, dataProvider = "LoginData", dataProviderClass = DataSet.class)
+	public void loginTest(String number, String pass, String userName) {
+		loginTest(number,pass);
+		loginPage.wait(5000);
+		assertEquals(homePage.getText(homePage.userName), userName);
+	}
 }

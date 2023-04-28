@@ -24,6 +24,13 @@ public class DataSet {
 		return errorObjects;
 	}
 	
+	@DataProvider(name = "LoginData")
+	public static Object datasetThree() {
+		Object[][] validObjects = {
+				{"01736278083","i@m1997s","Istear"}
+				};
+		return validObjects;
+	}
 
 }
 
